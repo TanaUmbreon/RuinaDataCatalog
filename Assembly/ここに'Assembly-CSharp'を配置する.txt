@@ -1,0 +1,8 @@
+「RuinaDataCatalog.RuinaDBSetup」プロジェクトをビルドするためには、
+「Libray of Ruina」のゲーム本体から以下のDLLファイルをコピーして、このフォルダに配置する必要があります。
+
+■コピーするゲーム本体のDLLファイル
+Assembly-CSharp.dll
+
+■ゲーム本体の場所 ※一般的なインストール先は以下となりますが、PCやSteamの環境設定によって変わります。
+C:\Program Files (x86)\Steam\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed

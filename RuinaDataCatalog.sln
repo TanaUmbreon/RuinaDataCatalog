@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuinaDataCatalog.RuinaDBSetup", "RuinaDataCatalog.RuinaDBSetup\RuinaDataCatalog.RuinaDBSetup.csproj", "{B4598521-C6A5-412E-A5AA-65BE7222D88E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F5E556B-9753-46A6-9FA4-6C80F9ED0FA3}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuinaDataCatalog.RuinaDBSetup.Test", "RuinaDataCatalog.RuinaDBSetup.Test\RuinaDataCatalog.RuinaDBSetup.Test.csproj", "{DEDAFF9D-76F4-4811-AFC8-67DFC8434C7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4598521-C6A5-412E-A5AA-65BE7222D88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4598521-C6A5-412E-A5AA-65BE7222D88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4598521-C6A5-412E-A5AA-65BE7222D88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4598521-C6A5-412E-A5AA-65BE7222D88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDAFF9D-76F4-4811-AFC8-67DFC8434C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDAFF9D-76F4-4811-AFC8-67DFC8434C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDAFF9D-76F4-4811-AFC8-67DFC8434C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDAFF9D-76F4-4811-AFC8-67DFC8434C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01B97948-5FED-4B6F-9205-3C614288CFE4}
+	EndGlobalSection
+EndGlobal
