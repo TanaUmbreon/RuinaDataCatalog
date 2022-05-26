@@ -33,10 +33,10 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
 
         foreach (string sourceFilePath in EnumerateSourceFiles(sourceDirectoryPath))
         {
+            Console.WriteLine($"- '{sourceFilePath}'");
+
             try
             {
-                Console.WriteLine($"- '{sourceFilePath}'");
-
                 string rootName = LoadRootElementName(sourceFilePath);
                 LoadingResult result = rootName switch
                 {
@@ -44,13 +44,11 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
                     "BattleCardDescRoot" => LoadFrom<BattleCardDescRoot>(sourceFilePath).SelectItems(r => r.cardDescList).AddTo(ref _cardDescriptions),
                     _ => LoadingResult.UnknownRoot,
                 };
-
                 Console.WriteLine($"  - {result}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"  - {ex.Message}");
-                throw;
             }
         }
 
