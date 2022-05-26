@@ -9,7 +9,29 @@ public class Program
     #region エントリ ポイント
 
     public static void Main(string[] args)
-        => new Program(args).Execute();
+    {
+        try
+        {
+            new Program(args).Execute();
+        }
+        catch (Exception ex)
+        {
+            ConsoleColor color = Console.ForegroundColor;
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("問題が発生したためアプリケーションは停止しました。");
+            Console.WriteLine(ex.Message);
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine($"{ex.GetType().Name}:");
+            Console.WriteLine(ex.StackTrace);
+            Console.WriteLine();
+
+            Console.ForegroundColor = color;
+            Environment.Exit(1);
+        }
+    }
 
     #endregion
 
@@ -31,9 +53,9 @@ public class Program
     private void Execute()
     {
         Console.WriteLine("Ruina データベース ファイルを作成します。");
-        Console.WriteLine($"読込元: '{Path.GetFullPath(_option.ReadXmlFromPath)}'");
-        Console.WriteLine($"出力先: '{Path.GetFullPath(_option.WriteDatabaseToPath)}'");
-        Console.WriteLine($"上書き出力: {(_option.OverwritesDatabase ? "する" : "しない")}");
+        Console.WriteLine($"- 読込元: '{Path.GetFullPath(_option.ReadXmlFromPath)}'");
+        Console.WriteLine($"- 出力先: '{Path.GetFullPath(_option.WriteDatabaseToPath)}'");
+        Console.WriteLine($"- 上書き出力: {(_option.OverwritesDatabase ? "する" : "しない")}");
         Console.WriteLine();
 
         ICatalogSourceRepository source = CreateCatalogSourceRepository();
@@ -44,6 +66,7 @@ public class Program
         catalog.SetupCardDescriptions(source.CardDescriptions.Select(c => c.ToCardDescriptionInfo()));
 
         Console.WriteLine("Ruina データベースを作成しました。");
+        Console.WriteLine();
     }
 
     private ICatalogSourceRepository CreateCatalogSourceRepository()
