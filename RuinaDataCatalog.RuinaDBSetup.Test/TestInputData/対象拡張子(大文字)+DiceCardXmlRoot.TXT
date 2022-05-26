@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DiceCardXmlRoot>
+  <Card ID="2278002">
+    <Name>Hail</Name>
+    <Artwork>Hail</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="3" />
+    <Script>hail5all</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Evasion" Motion="G" EffectRes="" Script="damage2pw" Desc="" />
+      <Behaviour Min="5" Dice="6" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="damage2pw" Desc="" />
+    </BehaviourList>
+    <Chapter>4</Chapter>
+    <Priority>0</Priority>
+  </Card>
+</DiceCardXmlRoot>
