@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using LOR_DiceSystem;
@@ -65,7 +66,7 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
     private static IEnumerable<string> EnumerateSourceFiles(string path)
         => new DirectoryInfo(path)
             .EnumerateFiles("*", SearchOption.AllDirectories)
-            .Where(f => f.Extension == ".txt" || f.Extension == ".xml")
+            .Where(f => Regex.IsMatch(f.Extension.ToLower(), @"^\.(txt|xml)$", RegexOptions.IgnoreCase))
             .Select(f => f.FullName)
             .ToArray();
 
