@@ -6,21 +6,21 @@ namespace RuinaDataCatalog.RuinaDBSetup.Test.Infrastructures;
 public class XmlCatalogSourceRepositoryTest
 {
     [Test]
-    public void TestNew_ThorwsArgumentNullException()
+    public void New_ThorwsArgumentNullException()
     {
         Assert.That(() => new XmlCatalogSourceRepository(null!),
             Throws.ArgumentNullException);
     }
 
     [Test]
-    public void TestNew_ThrowsDirectoryNotFound()
+    public void New_ThrowsDirectoryNotFound()
     {
         Assert.That(() => new XmlCatalogSourceRepository(@"存在しないフォルダー\"),
             Throws.Exception.TypeOf<DirectoryNotFoundException>());
     }
 
     [Test]
-    public void TestNew()
+    public void New()
     {
         var repo = new XmlCatalogSourceRepository(@"TestInputData\");
         Assert.That(repo.Cards.Count(), Is.EqualTo(3));

@@ -62,7 +62,7 @@ public class Program
         ICatalogSourceRepository source = CreateCatalogSourceRepository();
         ICatalogSetupRepository catalog = CreateCatalogSetupRepository();
 
-        catalog.SetupEnumDescriptions();
+        catalog.RebuildAndInsertEnumDescriptions();
         catalog.SetupCards(source.Cards.Select(c => c.ToCardInfo()));
         catalog.SetupCardDescriptions(source.CardDescriptions.Select(c => c.ToCardDescriptionInfo()));
 
