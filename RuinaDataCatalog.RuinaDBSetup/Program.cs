@@ -63,7 +63,7 @@ public class Program
         ICatalogSetupRepository catalog = CreateCatalogSetupRepository();
 
         catalog.RebuildAndInsertEnumDescriptions();
-        catalog.SetupCards(source.Cards.Select(c => c.ToCardInfo()));
+        catalog.RebuildAndInsertCards(source.Cards.Select(c => c.ToCardInfo()));
         catalog.SetupCardDescriptions(source.CardDescriptions.Select(c => c.ToCardDescriptionInfo()));
 
         Console.WriteLine("Ruina データベースを作成しました。");

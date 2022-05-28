@@ -12,7 +12,11 @@ public interface ICatalogSetupRepository
     /// </summary>
     void RebuildAndInsertEnumDescriptions();
 
-    void SetupCards(IEnumerable<CardInfo> cards);
+    /// <summary>
+    /// バトル ページ情報テーブル群を再構築し、指定したバトル ページ情報のコレクションでレコードを追加します。
+    /// </summary>
+    /// <param name="cards">テーブルに追加するバトル ページ情報のコレクション。</param>
+    void RebuildAndInsertCards(IEnumerable<CardInfo> cards);
 
     void SetupCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions);
 }

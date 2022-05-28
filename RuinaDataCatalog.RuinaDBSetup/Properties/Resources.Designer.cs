@@ -61,7 +61,86 @@ namespace RuinaDataCatalog.RuinaDBSetup.Properties {
         }
         
         /// <summary>
-        ///   -- 列挙値の説明テーブル群を再構築し、レコードを追加するクエリです。
+        ///   INSERT OR REPLACE INTO &quot;CARD&quot; VALUES (
+        ///    $ID, -- INTEGER
+        ///    $NAME, -- TEXT
+        ///    $TEXT_ID, -- INTEGER
+        ///    $ARTWORK, -- TEXT
+        ///    $RARITY, -- INTEGER
+        ///    $RANGE, -- INTEGER
+        ///    $COST, -- INTEGER
+        ///    $AFFECTION, -- INTEGER
+        ///    $EMOTION_LIMIT, -- INTEGER
+        ///    $SCRIPT, -- TEXT
+        ///    $SCRIPT_DESC, -- TEXT
+        ///    $CHAPTER, -- INTEGER
+        ///    $SPECIAL_EFFECT, -- TEXT
+        ///    $SKIN_CHANGE, -- TEXT
+        ///    $SKIN_CHANGE_TYPE, -- INTEGER
+        ///    $SKIN_HEIGHT, -- INTEGER
+        ///    $MAP_CHANGE, -- TEXT
+        ///    $PRIORITY, -- INTEGER
+        /// [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCard {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   INSERT OR REPLACE INTO &quot;CARD_BEHAVIOUR&quot; VALUES (
+        ///    $ID, -- INTEGER
+        ///    $INDEX, -- INTEGER
+        ///    $MIN, -- INTEGER
+        ///    $DICE, -- INTEGER
+        ///    $TYPE, -- INTEGER
+        ///    $DETAIL, -- INTEGER
+        ///    $MOTION, -- INTEGER
+        ///    $MOTION_DEFAULT, -- INTEGER
+        ///    $EFFECT_RES, -- TEXT
+        ///    $SCRIPT, -- TEXT
+        ///    $ACTION_SCRIPT, -- TEXT
+        ///    $DESC -- TEXT
+        ///);
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCardBehaviour {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCardBehaviour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   INSERT OR REPLACE INTO &quot;CARD_KEYWORD&quot; VALUES (
+        ///    $ID, -- INTEGER
+        ///    $INDEX, -- INTEGER
+        ///    $VALUE -- TEXT
+        ///);
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCardKeyword {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCardKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   INSERT OR REPLACE INTO &quot;CARD_OPTION&quot; VALUES (
+        ///    $ID, -- INTEGER
+        ///    $INDEX, -- INTEGER
+        ///    $VALUE -- INTEGER
+        ///);
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCardOption {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCardOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   -- 列挙値の説明テーブル群を再構築し、固定のレコードを追加する SQL です。
         ///
         ///-- レアリティ説明テーブル
         ///DROP TABLE IF EXISTS &quot;ENUM_RARITY_DESC&quot;;
@@ -76,16 +155,42 @@ namespace RuinaDataCatalog.RuinaDBSetup.Properties {
         ///	(2, &apos;限定&apos;),
         ///	(3, &apos;芸術&apos;);
         ///
-        ///-- バトルページ攻撃範囲説明テーブル
+        ///-- バトル ページ攻撃範囲説明テーブル
         ///DROP TABLE IF EXISTS &quot;ENUM_RANGE_DESC&quot;;
         ///CREATE TABLE IF NOT EXISTS &quot;ENUM_RANGE_DESC&quot; (
         ///	&quot;VALUE&quot; INTEGER NOT NULL,
         ///	&quot;LOCALIZED_NAME&quot; TEXT NOT NULL,
-        ///	PRIMARY KE [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///	PRIM [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string RebuildAndInsertEnumTables {
             get {
                 return ResourceManager.GetString("RebuildAndInsertEnumTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   -- バトル ページ情報で使用するテーブル群を再構築するクエリです。
+        ///
+        ///-- バトル ページ テーブル:
+        ///--   1レコードで単一のバトル ページ情報を定義します。
+        ///DROP TABLE IF EXISTS &quot;CARD&quot;;
+        ///CREATE TABLE &quot;CARD&quot; (
+        ///    &quot;ID&quot; INTEGER NOT NULL,
+        ///    &quot;NAME&quot; TEXT NOT NULL,
+        ///    &quot;TEXT_ID&quot; INTEGER NOT NULL,
+        ///    &quot;ARTWORK&quot; TEXT NOT NULL,
+        ///    &quot;RARITY&quot; INTEGER NOT NULL,
+        ///    &quot;RANGE&quot; INTEGER NOT NULL,
+        ///    &quot;COST&quot; INTEGER NOT NULL,
+        ///    &quot;AFFECTION&quot; INTEGER NOT NULL,
+        ///    &quot;EMOTION_LIMIT&quot; INTEGER NOT NULL,
+        ///    &quot;SCRIPT&quot; TEXT NOT NULL,
+        ///    &quot;SCRIPT_DESC&quot; TEXT NOT NULL,
+        ///    &quot;CHAPTER&quot; INTEGER N [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RebuildCardTables {
+            get {
+                return ResourceManager.GetString("RebuildCardTables", resourceCulture);
             }
         }
     }

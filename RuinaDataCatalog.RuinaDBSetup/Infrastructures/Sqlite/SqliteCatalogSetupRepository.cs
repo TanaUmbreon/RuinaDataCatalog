@@ -29,15 +29,21 @@ public class SqliteCatalogSetupRepository : ICatalogSetupRepository
     public void RebuildAndInsertEnumDescriptions()
     {
         using var connection = CreateOpenConnection();
-        SqliteRebuildAndInsertEnumTablesCommand.Execute(connection);
+        SqliteRebuildAndInsertEnumDescriptionTablesCommand.Execute(connection);
+    }
+
+    public void RebuildAndInsertCards(IEnumerable<CardInfo> cards)
+    {
+        using var connection = CreateOpenConnection();
+
+        SqliteRebuildCardTablesCommand.Execute(connection);
+        foreach (CardInfo card in cards)
+        {
+            SqliteInsertOrReplaceCardCommand.Execute(connection, card);
+        }
     }
 
     public void SetupCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SetupCards(IEnumerable<CardInfo> cards)
     {
         throw new NotImplementedException();
     }
