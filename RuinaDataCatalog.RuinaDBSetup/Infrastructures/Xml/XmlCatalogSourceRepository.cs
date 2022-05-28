@@ -98,7 +98,7 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
     /// <typeparam name="TXmlRoot"></typeparam>
     /// <param name="sourceFilePath"></param>
     /// <returns></returns>
-    private LoadedRootResult<TXmlRoot> LoadFrom<TXmlRoot>(string sourceFilePath) where TXmlRoot : class
+    private static LoadedRootResult<TXmlRoot> LoadFrom<TXmlRoot>(string sourceFilePath) where TXmlRoot : class
     {
         var serializer = new XmlSerializer(typeof(TXmlRoot));
         using var reader = new StreamReader(sourceFilePath, Encoding.UTF8);
@@ -120,7 +120,7 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
         /// <param name="selector"></param>
         /// <returns></returns>
         public SelectedItemsResult<TItem> SelectItems<TItem>(Func<TXmlRoot, IEnumerable<TItem>> selector)
-            => new SelectedItemsResult<TItem>(selector.Invoke(_root));
+            => new(selector.Invoke(_root));
     }
 
     private class SelectedItemsResult<TItem>
