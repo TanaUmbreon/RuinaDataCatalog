@@ -1,4 +1,5 @@
-﻿using RuinaDataCatalog.RuinaDBSetup.Models;
+﻿using Microsoft.Data.Sqlite;
+using RuinaDataCatalog.RuinaDBSetup.Models;
 using RuinaDataCatalog.RuinaDBSetup.Repositries;
 
 namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
@@ -27,7 +28,8 @@ public class SqliteCatalogSetupRepository : ICatalogSetupRepository
 
     public void RebuildAndInsertEnumDescriptions()
     {
-        throw new NotImplementedException();
+        using var connection = CreateOpenConnection();
+        SqliteRebuildAndInsertEnumTablesCommand.Execute(connection);
     }
 
     public void SetupCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions)
@@ -38,5 +40,31 @@ public class SqliteCatalogSetupRepository : ICatalogSetupRepository
     public void SetupCards(IEnumerable<CardInfo> cards)
     {
         throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// SQLite データベースの接続を生成して開きます。
+    /// </summary>
+    /// <returns></returns>
+    private SqliteConnection CreateOpenConnection()
+    {
+        SqliteConnection? connection = null;
+        try
+        {
+            var builder = new SqliteConnectionStringBuilder()
+            {
+                DataSource = _dbFile.FullName,
+            }.ToString();
+
+            connection = new SqliteConnection(builder.ToString());
+            connection.Open();
+
+            return connection;
+        }
+        catch
+        {
+            connection?.Dispose();
+            throw;
+        }
     }
 }
