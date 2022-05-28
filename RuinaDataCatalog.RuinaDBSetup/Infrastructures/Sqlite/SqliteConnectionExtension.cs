@@ -9,7 +9,7 @@ namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
 public static class SqliteConnectionExtension
 {
     /// <summary>
-    /// 指定された SQL を実行するコマンドを生成して返します。
+    /// 指定した SQL を実行するコマンドを生成して返します。
     /// </summary>
     /// <param name="connection">コマンド生成元の接続。</param>
     /// <param name="sql">接続先のデータベースを操作する SQL。</param>

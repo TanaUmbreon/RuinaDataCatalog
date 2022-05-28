@@ -8,7 +8,7 @@ namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
 public static class SqliteCommandExtension
 {
     /// <summary>
-    /// 指定されたパラメーター名、データ型および値を持つパラメータを
+    /// 指定したパラメーター名、データ型および値を持つパラメータを
     /// <see cref="SqliteCommand.Parameters">Parameters</see> プロパティに追加します。
     /// </summary>
     /// <param name="command">パラメーター追加先のコマンド。</param>
