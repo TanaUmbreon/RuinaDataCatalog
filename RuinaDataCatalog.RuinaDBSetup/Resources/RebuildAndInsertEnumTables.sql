@@ -1,4 +1,4 @@
--- 列挙値の説明テーブル群を再構築し、レコードを追加するクエリです。
+-- 列挙値の説明テーブル群を再構築し、固定のレコードを追加する SQL です。
 
 -- レアリティ説明テーブル
 DROP TABLE IF EXISTS "ENUM_RARITY_DESC";
@@ -13,7 +13,7 @@ INSERT INTO "ENUM_RARITY_DESC" VALUES
 	(2, '限定'),
 	(3, '芸術');
 
--- バトルページ攻撃範囲説明テーブル
+-- バトル ページ攻撃範囲説明テーブル
 DROP TABLE IF EXISTS "ENUM_RANGE_DESC";
 CREATE TABLE IF NOT EXISTS "ENUM_RANGE_DESC" (
 	"VALUE" INTEGER NOT NULL,
@@ -28,7 +28,7 @@ INSERT INTO "ENUM_RANGE_DESC" VALUES
 	(4, '特殊'),
 	(5, '装着時発動');
 
--- バトルページ使用対象説明テーブル
+-- バトル ページ使用対象説明テーブル
 DROP TABLE IF EXISTS "ENUM_AFFECTION_DESC";
 CREATE TABLE IF NOT EXISTS "ENUM_AFFECTION_DESC" (
 	"VALUE" INTEGER NOT NULL,
@@ -59,7 +59,7 @@ INSERT INTO "ENUM_CHAPTER_DESC" VALUES
 	(6, '都市の星'),
 	(7, '不純物');
 
--- バトルダイス振る舞い詳細説明テーブル
+-- バトル ダイス振る舞い詳細説明テーブル
 DROP TABLE IF EXISTS "ENUM_BEHAVIOUR_DETAIL_DESC";
 CREATE TABLE IF NOT EXISTS "ENUM_BEHAVIOUR_DETAIL_DESC" (
 	"VALUE" INTEGER NOT NULL,
@@ -73,7 +73,7 @@ INSERT INTO "ENUM_BEHAVIOUR_DETAIL_DESC" VALUES
 	(3, '防御'),
 	(4, '回避');
 
--- バトルダイス振る舞い種類説明テーブル
+-- バトル ダイス振る舞い種類説明テーブル
 DROP TABLE IF EXISTS "ENUM_BEHAVIOUR_TYPE_DESC";
 CREATE TABLE IF NOT EXISTS "ENUM_BEHAVIOUR_TYPE_DESC" (
 	"VALUE" INTEGER NOT NULL,
@@ -85,7 +85,7 @@ INSERT INTO "ENUM_BEHAVIOUR_TYPE_DESC" VALUES
 	(1, '守備'),
 	(2, '反撃');
 
--- バトルページオプション説明テーブル
+-- バトル ページ オプション説明テーブル
 DROP TABLE IF EXISTS "ENUM_OPTION_DESC";
 CREATE TABLE IF NOT EXISTS "ENUM_OPTION_DESC" (
 	"VALUE" INTEGER NOT NULL,
