@@ -124,6 +124,12 @@
   <data name="InsertOrReplaceCardBehaviour" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\insertorreplacecardbehaviour.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>
+  <data name="InsertOrReplaceCardBehaviourDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\insertorreplacecardbehaviourdescription.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
+  </data>
+  <data name="InsertOrReplaceCardDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\insertorreplacecarddescription.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
+  </data>
   <data name="InsertOrReplaceCardKeyword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\insertorreplacecardkeyword.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>
@@ -132,6 +138,9 @@
   </data>
   <data name="RebuildAndInsertEnumTables" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\rebuildandinsertenumtables.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="RebuildCardDescriptionTables" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\rebuildcarddescriptiontables.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="RebuildCardTables" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\rebuildcardtables.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

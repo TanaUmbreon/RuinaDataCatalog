@@ -43,9 +43,15 @@ public class SqliteCatalogSetupRepository : ICatalogSetupRepository
         }
     }
 
-    public void SetupCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions)
+    public void RebuildAndInsertCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions)
     {
-        throw new NotImplementedException();
+        using var connection = CreateOpenConnection();
+
+        SqliteRebuildCardDescriptionTablesCommand.Execute(connection);
+        foreach (CardDescriptionInfo description in cardDescriptions)
+        {
+            SqliteInsertOrReplaceCardDescriptionCommand.Execute(connection, description);
+        }
     }
 
     /// <summary>

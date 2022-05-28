@@ -22,9 +22,9 @@ public static class DiceBehaviourExtension
             Detail = ToInt32(xml.Detail),
             Motion = ToInt32(xml.MotionDetail),
             MotionDefault = ToInt32(xml.MotionDetailDefault),
-            EffectRes = xml.EffectRes,
-            Script = xml.Script,
-            ActionScript = xml.ActionScript,
-            Desc = xml.Desc,
+            EffectRes = xml.EffectRes ?? "",
+            Script = xml.Script ?? "",
+            ActionScript = xml.ActionScript ?? "",
+            Desc = xml.Desc ?? "",
         };
 }

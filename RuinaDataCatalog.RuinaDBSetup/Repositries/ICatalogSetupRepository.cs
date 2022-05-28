@@ -18,5 +18,9 @@ public interface ICatalogSetupRepository
     /// <param name="cards">テーブルに追加するバトル ページ情報のコレクション。</param>
     void RebuildAndInsertCards(IEnumerable<CardInfo> cards);
 
-    void SetupCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions);
+    /// <summary>
+    /// バトル ページ説明テーブル群を再構築し、指定したバトル ページ説明のコレクションでレコードを追加します。
+    /// </summary>
+    /// <param name="cardDescriptions">テーブルに追加するバトル ページ説明のコレクション。</param>
+    void RebuildAndInsertCardDescriptions(IEnumerable<CardDescriptionInfo> cardDescriptions);
 }

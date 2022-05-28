@@ -64,7 +64,7 @@ public class Program
 
         catalog.RebuildAndInsertEnumDescriptions();
         catalog.RebuildAndInsertCards(source.Cards.Select(c => c.ToCardInfo()));
-        catalog.SetupCardDescriptions(source.CardDescriptions.Select(c => c.ToCardDescriptionInfo()));
+        catalog.RebuildAndInsertCardDescriptions(source.CardDescriptions.Select(c => c.ToCardDescriptionInfo()));
 
         Console.WriteLine("Ruina データベースを作成しました。");
         Console.WriteLine();

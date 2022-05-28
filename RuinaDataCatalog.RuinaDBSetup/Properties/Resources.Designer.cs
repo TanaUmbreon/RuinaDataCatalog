@@ -112,6 +112,34 @@ namespace RuinaDataCatalog.RuinaDBSetup.Properties {
         }
         
         /// <summary>
+        ///   INSERT OR REPLACE INTO &quot;CARD_BEHAVIOUR_DESC&quot; VALUES (
+        ///    $CARD_DESC_ID, -- INTEGER
+        ///    $INDEX, -- INTEGER
+        ///    $BEHAVIOUR_DESC -- TEXT
+        ///);
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCardBehaviourDescription {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCardBehaviourDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   INSERT OR REPLACE INTO &quot;CARD_DESC&quot; VALUES (
+        ///    $ID, -- INTEGER
+        ///    $LOCALIZED_NAME, -- TEXT
+        ///    $ABILITY -- TEXT
+        ///);
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InsertOrReplaceCardDescription {
+            get {
+                return ResourceManager.GetString("InsertOrReplaceCardDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   INSERT OR REPLACE INTO &quot;CARD_KEYWORD&quot; VALUES (
         ///    $ID, -- INTEGER
         ///    $INDEX, -- INTEGER
@@ -165,6 +193,31 @@ namespace RuinaDataCatalog.RuinaDBSetup.Properties {
         internal static string RebuildAndInsertEnumTables {
             get {
                 return ResourceManager.GetString("RebuildAndInsertEnumTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   -- バトル ページ説明で使用するテーブル群を再構築するクエリです。
+        ///
+        ///-- バトル ページ説明テーブル:
+        ///--   ローカライズされたバトル ページ説明情報を定義します。
+        ///--   &quot;CARD&quot;.&quot;TEXT_ID&quot; と &quot;CARD_DESC&quot;.&quot;ID&quot; で結合してどのバトル ページに対する定義なのかを表します。
+        ///--   ただし、&quot;CARD&quot;.&quot;TEXT_ID&quot; が -1 の場合は &quot;CARD&quot;.&quot;ID&quot; と結合します。
+        ///DROP TABLE IF EXISTS &quot;CARD_DESC&quot;;
+        ///CREATE TABLE &quot;CARD_DESC&quot; (
+        ///    &quot;ID&quot; INTEGER NOT NULL,
+        ///    &quot;LOCALIZED_NAME&quot; TEXT NOT NULL,
+        ///    &quot;ABILITY&quot; TEXT NOT NULL,
+        ///    PRIMARY KEY(&quot;ID&quot;)
+        ///);
+        ///
+        ///-- バトル ページ ダイス振る舞い説明テーブル
+        ///--   バトル ページが持つ、ローカライズされたバトル ダイスの振る舞い説明を定義します。
+        ///--   &quot;CARD_DESC&quot;.&quot;ID&quot; と &quot;CARD_B [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RebuildCardDescriptionTables {
+            get {
+                return ResourceManager.GetString("RebuildCardDescriptionTables", resourceCulture);
             }
         }
         
