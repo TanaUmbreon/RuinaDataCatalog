@@ -1,0 +1,103 @@
+-- 列挙値の説明テーブル群を再構築し、レコードを追加するクエリです。
+
+-- レアリティ説明テーブル
+DROP TABLE IF EXISTS "ENUM_RARITY_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_RARITY_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_RARITY_DESC" VALUES
+	(0, '普及'),
+	(1, '高級'),
+	(2, '限定'),
+	(3, '芸術');
+
+-- バトルページ攻撃範囲説明テーブル
+DROP TABLE IF EXISTS "ENUM_RANGE_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_RANGE_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_RANGE_DESC" VALUES
+	(0, '近距離'),
+	(1, '遠距離'),
+	(2, '広域'),
+	(3, '個別広域'),
+	(4, '特殊'),
+	(5, '装着時発動');
+
+-- バトルページ使用対象説明テーブル
+DROP TABLE IF EXISTS "ENUM_AFFECTION_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_AFFECTION_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_AFFECTION_DESC" VALUES
+	(0, '一人'),
+	(1, '敵全員'),
+	(2, '敵味方全員'),
+	(3, 'パッシブ'),
+	(4, '敵全員に1回ずつ');
+
+-- チャプター説明テーブル
+DROP TABLE IF EXISTS "ENUM_CHAPTER_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_CHAPTER_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_CHAPTER_DESC" VALUES
+	(0, '未設定'),
+	(1, 'あらぬ噂'),
+	(2, '都市怪談'),
+	(3, '都市伝説'),
+	(4, '都市疾病'),
+	(5, '都市悪夢'),
+	(6, '都市の星'),
+	(7, '不純物');
+
+-- バトルダイス振る舞い詳細説明テーブル
+DROP TABLE IF EXISTS "ENUM_BEHAVIOUR_DETAIL_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_BEHAVIOUR_DETAIL_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_BEHAVIOUR_DETAIL_DESC" VALUES
+	(0, '斬撃'),
+	(1, '貫通'),
+	(2, '打撃'),
+	(3, '防御'),
+	(4, '回避');
+
+-- バトルダイス振る舞い種類説明テーブル
+DROP TABLE IF EXISTS "ENUM_BEHAVIOUR_TYPE_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_BEHAVIOUR_TYPE_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_BEHAVIOUR_TYPE_DESC" VALUES
+	(0, '攻撃'),
+	(1, '守備'),
+	(2, '反撃');
+
+-- バトルページオプション説明テーブル
+DROP TABLE IF EXISTS "ENUM_OPTION_DESC";
+CREATE TABLE IF NOT EXISTS "ENUM_OPTION_DESC" (
+	"VALUE" INTEGER NOT NULL,
+	"LOCALIZED_NAME" TEXT NOT NULL,
+	PRIMARY KEY ("VALUE")
+);
+INSERT INTO "ENUM_OPTION_DESC" VALUES
+	(0, '初期装備ページ'),
+	(1, '専用ページ'),
+	(2, 'E.G.Oページ'),
+	(3, '個人用E.G.Oページ'),
+	(4, '個人用特殊ページ'),
+	(5, '装備変更不可ページ'),
+	(6, '使用時消滅ページ'),
+	(7, 'E.G.O同化ページ');
