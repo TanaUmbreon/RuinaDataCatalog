@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Tana</Authors>
+    <Copyright>Copyright © 2022 Tana</Copyright>
+    <PackageProjectUrl>https://github.com/TanaUmbreon/RuinaDataCatalog</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TanaUmbreon/RuinaDataCatalog</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>
