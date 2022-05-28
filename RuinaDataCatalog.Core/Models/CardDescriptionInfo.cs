@@ -1,4 +1,4 @@
-﻿namespace RuinaDataCatalog.RuinaDBSetup.Models;
+﻿namespace RuinaDataCatalog.Core.Models;
 
 /// <summary>
 /// ローカライズされたバトル ページ説明の情報を格納します。

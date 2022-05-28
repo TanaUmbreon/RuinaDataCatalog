@@ -6,7 +6,7 @@ using LOR_DiceSystem;
 using LOR_XML;
 using RuinaDataCatalog.RuinaDBSetup.Repositries;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures;
+namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Xml;
 
 /// <summary>
 /// Ruina カタログ データの元データ XML ファイルに対する直接的な操作を提供します。
@@ -138,7 +138,7 @@ public class XmlCatalogSourceRepository : ICatalogSourceRepository
         public LoadingResult AddTo(ref List<TItem> list)
         {
             list.AddRange(_items);
-            return new LoadingResult(typeof(TItem).Name , _items.Count());
+            return new LoadingResult(typeof(TItem).Name, _items.Count());
         }
     }
 

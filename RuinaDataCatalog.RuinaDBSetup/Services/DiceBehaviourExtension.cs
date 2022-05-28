@@ -1,7 +1,8 @@
 ﻿using LOR_DiceSystem;
+using RuinaDataCatalog.Core.Models;
 using static System.Convert;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Models.ConvertExtensions;
+namespace RuinaDataCatalog.RuinaDBSetup.Services;
 
 /// <summary>
 /// <see cref="DiceBehaviour"/> の拡張メソッドを提供します。

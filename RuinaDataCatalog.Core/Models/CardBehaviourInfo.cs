@@ -1,4 +1,4 @@
-﻿namespace RuinaDataCatalog.RuinaDBSetup.Models;
+﻿namespace RuinaDataCatalog.Core.Models;
 
 /// <summary>
 /// バトル ページのバトル ダイスの振る舞い情報を格納します。

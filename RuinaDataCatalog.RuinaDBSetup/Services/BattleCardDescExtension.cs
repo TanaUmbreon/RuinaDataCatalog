@@ -1,6 +1,7 @@
 ﻿using LOR_XML;
+using RuinaDataCatalog.Core.Models;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Models.ConvertExtensions;
+namespace RuinaDataCatalog.RuinaDBSetup.Services;
 
 /// <summary>
 /// <see cref="BattleCardDesc"/> の拡張メソッドを提供します。

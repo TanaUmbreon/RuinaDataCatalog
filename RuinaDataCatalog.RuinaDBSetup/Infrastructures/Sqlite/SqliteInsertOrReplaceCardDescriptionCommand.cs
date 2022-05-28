@@ -1,5 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
-using RuinaDataCatalog.RuinaDBSetup.Models;
+using RuinaDataCatalog.Core.Models;
 using RuinaDataCatalog.RuinaDBSetup.Properties;
 
 namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;

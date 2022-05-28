@@ -1,4 +1,4 @@
-﻿using RuinaDataCatalog.RuinaDBSetup.Models;
+﻿using RuinaDataCatalog.Core.Models;
 
 namespace RuinaDataCatalog.RuinaDBSetup.Repositries;
 
