@@ -1,4 +1,5 @@
 ﻿using RuinaDataCatalog.RuinaDBSetup.Infrastructures;
+using RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
 using RuinaDataCatalog.RuinaDBSetup.Models.ConvertExtensions;
 using RuinaDataCatalog.RuinaDBSetup.Repositries;
 
