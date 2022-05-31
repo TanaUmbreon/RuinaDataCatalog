@@ -1,4 +1,4 @@
-﻿using RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+﻿using RuinaDataCatalog.Core.Infrastructures;
 
 namespace RuinaDataCatalog.RuinaDBSetup.Test.Infrastructures;
 

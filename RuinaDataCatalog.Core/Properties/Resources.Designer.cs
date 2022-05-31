@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RuinaDataCatalog.RuinaDBSetup.Properties {
+namespace RuinaDataCatalog.Core.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace RuinaDataCatalog.RuinaDBSetup.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RuinaDataCatalog.RuinaDBSetup.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RuinaDataCatalog.Core.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

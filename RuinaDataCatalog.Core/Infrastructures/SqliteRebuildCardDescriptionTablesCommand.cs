@@ -1,12 +1,12 @@
 ﻿using Microsoft.Data.Sqlite;
-using RuinaDataCatalog.RuinaDBSetup.Properties;
+using RuinaDataCatalog.Core.Properties;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+namespace RuinaDataCatalog.Core.Infrastructures;
 
 /// <summary>
-/// 列挙値の説明テーブル群を再構築し、固定のレコードを追加するコマンドです。
+/// バトル ページ情報テーブル群を再構築するコマンドです。
 /// </summary>
-public static class SqliteRebuildAndInsertEnumDescriptionTablesCommand
+public static class SqliteRebuildCardDescriptionTablesCommand
 {
     /// <summary>
     /// 指定した接続を使用してコマンドを実行します。
@@ -17,7 +17,7 @@ public static class SqliteRebuildAndInsertEnumDescriptionTablesCommand
         if (connection == null) { throw new ArgumentNullException(nameof(connection)); }
 
         using var transaction = connection.BeginTransaction(deferred: true);
-        using var command = connection.CreateCommand(Resources.RebuildAndInsertEnumTables);
+        using var command = connection.CreateCommand(Resources.RebuildCardDescriptionTables);
         command.ExecuteNonQuery();
 
         transaction.Commit();

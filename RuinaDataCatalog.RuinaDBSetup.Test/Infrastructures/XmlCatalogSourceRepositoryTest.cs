@@ -1,4 +1,4 @@
-﻿using RuinaDataCatalog.RuinaDBSetup.Infrastructures.Xml;
+﻿using RuinaDataCatalog.RuinaDBSetup.Infrastructures;
 
 namespace RuinaDataCatalog.RuinaDBSetup.Test.Infrastructures;
 

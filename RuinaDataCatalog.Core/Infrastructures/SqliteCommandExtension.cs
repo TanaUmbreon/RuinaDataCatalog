@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+namespace RuinaDataCatalog.Core.Infrastructures;
 
 /// <summary>
 /// <see cref="SqliteCommand"/> クラスの拡張メソッドを提供します。

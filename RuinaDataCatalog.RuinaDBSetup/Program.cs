@@ -1,5 +1,6 @@
-﻿using RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
-using RuinaDataCatalog.RuinaDBSetup.Infrastructures.Xml;
+﻿using RuinaDataCatalog.Core.Infrastructures;
+using RuinaDataCatalog.Core.Repositories;
+using RuinaDataCatalog.RuinaDBSetup.Infrastructures;
 using RuinaDataCatalog.RuinaDBSetup.Repositries;
 using RuinaDataCatalog.RuinaDBSetup.Services;
 

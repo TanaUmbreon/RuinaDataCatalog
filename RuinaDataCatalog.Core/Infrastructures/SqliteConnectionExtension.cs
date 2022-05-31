@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.Sqlite;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+namespace RuinaDataCatalog.Core.Infrastructures;
 
 /// <summary>
 /// <see cref="SqliteConnection"/> クラスの拡張メソッドを提供します。

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
 using RuinaDataCatalog.Core.Models;
-using RuinaDataCatalog.RuinaDBSetup.Repositries;
+using RuinaDataCatalog.Core.Repositories;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+namespace RuinaDataCatalog.Core.Infrastructures;
 
 /// <summary>
 /// SQLite データベース ファイルで構成された Ruina カタログ データベースをセットアップするための直接的な操作を提供します。

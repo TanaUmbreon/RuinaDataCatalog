@@ -1,6 +1,6 @@
 ﻿using RuinaDataCatalog.Core.Models;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Repositries;
+namespace RuinaDataCatalog.Core.Repositories;
 
 /// <summary>
 /// Ruina カタログ データベースをセットアップするための論理的な操作を提供します。

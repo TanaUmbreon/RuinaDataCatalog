@@ -1,8 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
 using RuinaDataCatalog.Core.Models;
-using RuinaDataCatalog.RuinaDBSetup.Properties;
+using RuinaDataCatalog.Core.Properties;
 
-namespace RuinaDataCatalog.RuinaDBSetup.Infrastructures.Sqlite;
+namespace RuinaDataCatalog.Core.Infrastructures;
 
 /// <summary>
 /// 指定したバトル ページ情報を追加または上書きするコマンドです。
