@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:muxc="http://schemas.modernwpf.com/2019">
+    <!-- NavigationViewItem用のアイコン (カスタム) -->
+    <muxc:PathIcon x:Key="Icons.BattlePage"
+                   Data="M0,0 h80 v100 h-80 z
+                         M5,20 l70,-10 v15 l-70,10 z
+                         M5,43 l70,-10 v40 l-70,10 z" />
+    <muxc:PathIcon x:Key="Icons.CorePage"
+                   Data="M0,0 h80 v70 l-30,30 h-50 z
+                         M5,5 h40 q30,0,30,30 v35 h-25 v25 h-15 q-30,0,-30,-30 z
+                         M10,45 h60 v5 h-60 z" />
+    <muxc:PathIcon x:Key="Icons.Passive"
+                   Data="M50,0 l42,25 v50 l-42,25 l-42,-25 v-50 z
+                         M36,13 l48,13 l-20,61 l-48,-13 z
+                         M57,27 l5,20 l-20,25 l0,-30 z" />
+</ResourceDictionary>
