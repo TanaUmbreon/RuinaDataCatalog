@@ -1,0 +1,38 @@
+[*.{cs,vb}]
+
+#### 命名スタイル ####
+
+# 名前付けルール
+
+# privateなフィールドはアンダースコアから始まるキャメルケースとする (ex.: _camelCase)
+# ただしconstフィールドはパスカルケースとする (ex.: PascalCase)
+
+dotnet_naming_rule.const_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.const_should_be_pascal_case.symbols = const
+dotnet_naming_rule.const_should_be_pascal_case.style = pascal_case
+
+dotnet_naming_rule.private_or_internal_field_should_be_camel_case_begins_with__.severity = suggestion
+dotnet_naming_rule.private_or_internal_field_should_be_camel_case_begins_with__.symbols = private_or_internal_field
+dotnet_naming_rule.private_or_internal_field_should_be_camel_case_begins_with__.style = camel_case_begins_with__
+
+# 記号の仕様
+
+dotnet_naming_symbols.const.applicable_kinds = field, local
+dotnet_naming_symbols.const.applicable_accessibilities = *
+dotnet_naming_symbols.const.required_modifiers = const
+
+dotnet_naming_symbols.private_or_internal_field.applicable_kinds = field
+dotnet_naming_symbols.private_or_internal_field.applicable_accessibilities = internal, private
+dotnet_naming_symbols.private_or_internal_field.required_modifiers = 
+
+# 命名スタイル
+
+dotnet_naming_style.pascal_case.required_prefix = 
+dotnet_naming_style.pascal_case.required_suffix = 
+dotnet_naming_style.pascal_case.word_separator = 
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+dotnet_naming_style.camel_case_begins_with__.required_prefix = _
+dotnet_naming_style.camel_case_begins_with__.required_suffix = 
+dotnet_naming_style.camel_case_begins_with__.word_separator = 
+dotnet_naming_style.camel_case_begins_with__.capitalization = camel_case
