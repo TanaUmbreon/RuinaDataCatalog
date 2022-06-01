@@ -25,9 +25,10 @@ public partial class App : PrismApplication
 
         // XAML側のViewModelLocator.AutoWireViewModelによる自動バインディングと、
         // コードビハインド側のコンストラクタDIで異なるインスタンスを注入されないようシングルトンにする
-        // (デフォルトだとXAML側とコードビハインド側でViewModelが異なるインスタントとなって
+        // (これをやらないとXAML側とコードビハインド側でViewModelが異なるインスタンスとなって
         //  思わぬ不具合が生じてしまうのでそれを回避している)
         containerRegistry.RegisterSingleton<MainWindowViewModel>();
+        containerRegistry.RegisterSingleton<BattlePageViewModel>();
 
         // DIコンテナ実装ライブラリ(DryIoc)固有の機能を使用して、
         // DIコンテナで使用するインターフェイスとその実装クラスを登録する
