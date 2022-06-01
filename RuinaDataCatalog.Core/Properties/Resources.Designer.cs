@@ -246,5 +246,16 @@ namespace RuinaDataCatalog.Core.Properties {
                 return ResourceManager.GetString("RebuildCardTables", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   SELECT *
+        ///FROM &quot;CARD&quot;
+        /// に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SelectCard {
+            get {
+                return ResourceManager.GetString("SelectCard", resourceCulture);
+            }
+        }
     }
 }

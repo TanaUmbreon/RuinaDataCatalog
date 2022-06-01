@@ -1,4 +1,5 @@
-﻿using RuinaDataCatalog.Core.Models;
+﻿using Microsoft.Data.Sqlite;
+using RuinaDataCatalog.Core.Models;
 using RuinaDataCatalog.Core.Repositories;
 
 namespace RuinaDataCatalog.Core.Infrastructures;
@@ -20,6 +21,35 @@ public class SqliteCatalogCardRepository : ICatalogCardRepository
 
     public IEnumerable<CardInfo> GetCards()
     {
+        using var connection = CreateOpenConnection();
+        var cards = SqliteSelectCardCommand.Execute(connection);
+
         return Array.Empty<CardInfo>();
+    }
+
+    /// <summary>
+    /// SQLite データベースの接続を生成して開きます。
+    /// </summary>
+    /// <returns></returns>
+    private SqliteConnection CreateOpenConnection()
+    {
+        SqliteConnection? connection = null;
+        try
+        {
+            var builder = new SqliteConnectionStringBuilder()
+            {
+                DataSource = _dbFile.FullName,
+            }.ToString();
+
+            connection = new SqliteConnection(builder.ToString());
+            connection.Open();
+
+            return connection;
+        }
+        catch
+        {
+            connection?.Dispose();
+            throw;
+        }
     }
 }
