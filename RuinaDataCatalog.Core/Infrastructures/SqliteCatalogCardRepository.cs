@@ -24,7 +24,7 @@ public class SqliteCatalogCardRepository : ICatalogCardRepository
         using var connection = CreateOpenConnection();
         var cards = SqliteSelectCardCommand.Execute(connection);
 
-        return Array.Empty<CardInfo>();
+        return cards;
     }
 
     /// <summary>
