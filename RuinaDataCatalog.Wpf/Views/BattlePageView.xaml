@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:local="clr-namespace:RuinaDataCatalog.Wpf.Views.Controls"
+             xmlns:model="clr-namespace:RuinaDataCatalog.Core.Models;assembly=RuinaDataCatalog.Core"
              mc:Ignorable="d" 
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="800"
-             d:DesignHeight="450">
+             d:DesignHeight="450" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style x:Key="GroupBoxBorder" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="0,0,0,10" />
@@ -28,8 +28,18 @@
             <Setter Property="Width" Value="6*" />
         </Style>
 
-        <DataTemplate x:Key="CardTemplate">
-            <local:BattlePageItem />
+        <DataTemplate x:Key="CardTemplate" DataType="model:CardInfo">
+            <Grid Width="300">
+                <StackPanel Margin="8,8,0,0" Background="#40808080">
+                    <TextBlock Text="{Binding Id}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding Name}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding Artwork}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding Rarity}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding Cost}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding Range}" Margin="0,0,0,8" />
+                </StackPanel>
+            </Grid>
+            <!--<local:BattlePageItem />-->
         </DataTemplate>
     </UserControl.Resources>
 
@@ -58,8 +68,11 @@
             <ui:AutoSuggestBox PlaceholderText="検索" QueryIcon="Find" />
         </Border>
         <Border Grid.Row="2" Style="{StaticResource GroupBoxBorder}">
-            <ui:GridView ItemsSource="{Binding DisplayedCards, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                         ItemTemplate="{StaticResource CardTemplate}"/>
+            <ui:GridView VirtualizingPanel.IsVirtualizing="True"
+                         VirtualizingPanel.VirtualizationMode="Recycling"
+                         VirtualizingPanel.ScrollUnit="Pixel"
+                         ItemTemplate="{StaticResource CardTemplate}"
+                         ItemsSource="{Binding DisplayedCards, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Border>
     </Grid>
 </UserControl>

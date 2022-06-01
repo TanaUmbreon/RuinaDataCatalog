@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RuinaDataCatalog.Wpf.ViewModels;
 
 namespace RuinaDataCatalog.Wpf.Views;
 
@@ -20,8 +21,16 @@ namespace RuinaDataCatalog.Wpf.Views;
 /// </summary>
 public partial class BattlePageView : UserControl
 {
-    public BattlePageView()
+    private readonly BattlePageViewModel _viewModel;
+
+    public BattlePageView(BattlePageViewModel viewModel)
     {
         InitializeComponent();
+        _viewModel = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
+    }
+
+    private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+    {
+        await _viewModel.ShowCardsAsyncCommand.ExecuteAsync();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Reactive.Disposables;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Reactive.Bindings;
@@ -27,6 +28,15 @@ public class BattlePageViewModel : BindableBase, IDestructible
 
     #endregion
 
+    #region コマンド用プロパティ
+
+    /// <summary>
+    /// バトル ページ情報を表示させるコマンドを取得します。
+    /// </summary>
+    public AsyncReactiveCommand ShowCardsAsyncCommand { get; }
+
+    #endregion
+
     /// <summary>
     /// <see cref="BattlePageViewModel"/> の新しいインスタンスを生成します。
     /// </summary>
@@ -38,9 +48,16 @@ public class BattlePageViewModel : BindableBase, IDestructible
         DisplayedCards = new ReactiveCollection<CardInfo>()
             .AddTo(_disposables);
 
-        DisplayedCards.AddRangeOnScheduler(_repository.GetCards());
+        ShowCardsAsyncCommand = new AsyncReactiveCommand();
+        ShowCardsAsyncCommand.Subscribe(ShowCardsAsync)
+            .AddTo(_disposables);
     }
 
     public void Destroy()
         => _disposables.Dispose();
+
+    private Task ShowCardsAsync()
+    {
+        return Task.Run(() => DisplayedCards.AddRangeOnScheduler(_repository.GetCards()));
+    }
 }
