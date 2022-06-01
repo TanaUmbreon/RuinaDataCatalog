@@ -57,7 +57,7 @@ public class MainWindowViewModel : BindableBase, IDisposable
         // そのため Dispose が呼び出されるように CompositeDisposable へ登録
         Title = new ReactivePropertySlim<string>(AssemblyInfo.ProductName)
             .AddTo(_disposables);
-        CurrentMenuName = new ReactivePropertySlim<string>("ABC")
+        CurrentMenuName = new ReactivePropertySlim<string>("")
             .AddTo(_disposables);
 
         NavigateCommand = new DelegateCommand<NavigateCommandArgs>(Navigate);
@@ -76,12 +76,12 @@ public class MainWindowViewModel : BindableBase, IDisposable
     }
 
     #region Dispose パターンの実装
-   
-    private bool disposedValue;
+
+    private bool _disposedValue;
 
     protected virtual void Dispose(bool disposing)
     {
-        if (!disposedValue)
+        if (!_disposedValue)
         {
             if (disposing)
             {
@@ -93,7 +93,7 @@ public class MainWindowViewModel : BindableBase, IDisposable
 
                 _disposables.Dispose();
             }
-            disposedValue = true;
+            _disposedValue = true;
         }
     }
 

@@ -12,7 +12,7 @@
     <muxc:NavigationView x:Name="NavigationView" ItemInvoked="NavigationView_ItemInvoked"
                          IsBackButtonVisible="Collapsed"
                          IsSettingsVisible="False"
-                         Header="{Binding CurrentMenuName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                         Header="{Binding CurrentMenuName.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
         <muxc:NavigationView.MenuItems>
             <muxc:NavigationViewItem Tag="BattlePageView"
                                      IsSelected="True"
