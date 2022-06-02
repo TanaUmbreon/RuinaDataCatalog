@@ -5,52 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:model="clr-namespace:RuinaDataCatalog.Core.Models;assembly=RuinaDataCatalog.Core"
+             xmlns:v="clr-namespace:RuinaDataCatalog.Wpf.Views"
              mc:Ignorable="d" 
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="800"
-             d:DesignHeight="450" Loaded="UserControl_Loaded">
-    <UserControl.Resources>
-        <Style x:Key="GroupBoxBorder" TargetType="{x:Type Border}">
-            <Setter Property="Margin" Value="0,0,0,10" />
-            <Setter Property="BorderThickness" Value="1,1,1,1" />
-            <Setter Property="CornerRadius" Value="3" />
-            <Setter Property="BorderBrush" Value="#33808080" />
-            <Setter Property="Background" Value="#19FFFFFF" />
-        </Style>
-        <Style x:Key="GroupBoxGrid" TargetType="{x:Type Grid}">
-            <Setter Property="Margin" Value="10,10,10,10" />
-        </Style>
-        <Style x:Key="GroupBoxGridHeader" TargetType="{x:Type ColumnDefinition}">
-            <Setter Property="Width" Value="4*" />
-        </Style>
-        <Style x:Key="GroupBoxGridContents" TargetType="{x:Type ColumnDefinition}">
-            <Setter Property="Width" Value="6*" />
-        </Style>
-
-        <DataTemplate x:Key="CardTemplate" DataType="model:CardInfo">
-            <Grid Width="300">
-                <StackPanel Margin="8,8,0,0" Background="#40808080">
-                    <TextBlock Text="{Binding Id}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Name}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Artwork}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Rarity}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Cost}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Range}" Margin="0,0,0,8" />
-                </StackPanel>
-            </Grid>
-            <!--<local:BattlePageItem />-->
-        </DataTemplate>
-    </UserControl.Resources>
-
-    <Grid Margin="10,10,10,10">
+             d:DesignHeight="450">
+    <Grid Style="{StaticResource PageContentGridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Style="{StaticResource GroupBoxBorder}">
+        <Border Grid.Row="0" Style="{StaticResource GroupBorderStyle}">
             <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="5,5,5,5">
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="全て" Margin="0,0,10,0" />
@@ -64,15 +31,11 @@
                 </StackPanel>
             </ScrollViewer>
         </Border>
-        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}">
+        <Border Grid.Row="1" Style="{StaticResource GroupBorderStyle}">
             <ui:AutoSuggestBox PlaceholderText="検索" QueryIcon="Find" />
         </Border>
-        <Border Grid.Row="2" Style="{StaticResource GroupBoxBorder}">
-            <ui:GridView VirtualizingPanel.IsVirtualizing="True"
-                         VirtualizingPanel.VirtualizationMode="Recycling"
-                         VirtualizingPanel.ScrollUnit="Pixel"
-                         ItemTemplate="{StaticResource CardTemplate}"
-                         ItemsSource="{Binding DisplayedCards, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Border Grid.Row="2" Style="{StaticResource GroupBorderStyle}">
+            <v:BattlePageListView />
         </Border>
     </Grid>
 </UserControl>

@@ -21,16 +21,8 @@ namespace RuinaDataCatalog.Wpf.Views;
 /// </summary>
 public partial class BattlePageView : UserControl
 {
-    private readonly BattlePageViewModel _viewModel;
-
-    public BattlePageView(BattlePageViewModel viewModel)
+    public BattlePageView()
     {
         InitializeComponent();
-        _viewModel = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
-    }
-
-    private async void UserControl_Loaded(object sender, RoutedEventArgs e)
-    {
-        await _viewModel.ShowCardsAsyncCommand.ExecuteAsync();
     }
 }

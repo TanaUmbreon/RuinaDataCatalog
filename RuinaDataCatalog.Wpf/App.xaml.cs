@@ -28,7 +28,7 @@ public partial class App : PrismApplication
         // (これをやらないとXAML側とコードビハインド側でViewModelが異なるインスタンスとなって
         //  思わぬ不具合が生じてしまうのでそれを回避している)
         containerRegistry.RegisterSingleton<MainWindowViewModel>();
-        containerRegistry.RegisterSingleton<BattlePageViewModel>();
+        containerRegistry.RegisterSingleton<BattlePageListViewModel>();
 
         // DIコンテナ実装ライブラリ(DryIoc)固有の機能を使用して、
         // DIコンテナで使用するインターフェイスとその実装クラスを登録する

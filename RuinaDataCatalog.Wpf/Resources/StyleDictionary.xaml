@@ -8,4 +8,22 @@
         <Setter Property="FontSize" Value="11pt" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
+
+    <Style x:Key="PageContentGridStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Margin" Value="10,10,10,10" />
+    </Style>
+
+    <Style x:Key="GroupBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="BorderThickness" Value="1,1,1,1" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="BorderBrush" Value="#33808080" />
+        <Setter Property="Background" Value="#19FFFFFF" />
+    </Style>
+    <Style x:Key="GroupBoxGridHeader" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="4*" />
+    </Style>
+    <Style x:Key="GroupBoxGridContents" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="6*" />
+    </Style>
 </ResourceDictionary>
