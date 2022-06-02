@@ -1,11 +1,6 @@
 ﻿using System.Reactive.Disposables;
-using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
-using RuinaDataCatalog.Core.Models;
-using RuinaDataCatalog.Core.Repositories;
 
 namespace RuinaDataCatalog.Wpf.ViewModels;
 

@@ -248,13 +248,32 @@ namespace RuinaDataCatalog.Core.Properties {
         }
         
         /// <summary>
-        ///   SELECT *
-        ///FROM &quot;CARD&quot;
-        /// に類似しているローカライズされた文字列を検索します。
+        ///   SELECT
+        ///	C.ID,
+        ///	CASE WHEN &quot;DESC&quot;.LOCALIZED_NAME IS NULL
+        ///		THEN C.NAME
+        ///		ELSE &quot;DESC&quot;.LOCALIZED_NAME
+        ///		END &quot;NAME&quot;,
+        ///	C.ARTWORK,
+        ///	C.RARITY,
+        ///	RARITY.LOCALIZED_NAME RARITY_NAME,
+        ///	C.RANGE,
+        ///	&quot;RANGE&quot;.LOCALIZED_NAME RANGE_NAME,
+        ///	C.COST
+        ///	C.CHAPTER,
+        ///
+        ///FROM &quot;CARD&quot; C
+        ///LEFT OUTER JOIN CARD_DESC &quot;DESC&quot;
+        ///	ON (C.TEXT_ID = -1 AND C.ID = &quot;DESC&quot;.ID)
+        ///	OR (C.TEXT_ID &lt;&gt; -1 AND C.TEXT_ID = &quot;DESC&quot;.ID)
+        ///LEFT OUTER JOIN ENUM_RARITY_DESC RARITY
+        ///	ON C.RARITY = RARITY.VALUE
+        ///LEFT OUTER JOIN ENUM_RANGE_DESC &quot;RANGE&quot;
+        ///	ON C.RA [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string SelectCard {
+        internal static string SelectLocalizedCard {
             get {
-                return ResourceManager.GetString("SelectCard", resourceCulture);
+                return ResourceManager.GetString("SelectLocalizedCard", resourceCulture);
             }
         }
     }

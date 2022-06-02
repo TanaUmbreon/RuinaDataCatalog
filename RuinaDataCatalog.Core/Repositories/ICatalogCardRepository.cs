@@ -8,7 +8,7 @@ namespace RuinaDataCatalog.Core.Repositories;
 public interface ICatalogCardRepository
 {
     /// <summary>
-    /// バトル ページ情報のコレクションを取得します。
+    /// ローカライズされたバトル ページ情報のコレクションを取得します。
     /// </summary>
-    public IEnumerable<CardInfo> GetCards();
+    public IEnumerable<LocalizedCardInfo> GetCards();
 }

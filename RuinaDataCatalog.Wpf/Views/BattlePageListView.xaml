@@ -15,14 +15,14 @@
                  VirtualizingPanel.ScrollUnit="Pixel"
                  ItemsSource="{Binding Cards, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
         <ui:GridView.ItemTemplate>
-            <DataTemplate DataType="m:CardInfo">
+            <DataTemplate DataType="m:LocalizedCardInfo">
                 <StackPanel Width="300" Margin="8,8,0,0" Background="#40808080">
                     <TextBlock Text="{Binding Id}" Margin="0,0,0,8" />
                     <TextBlock Text="{Binding Name}" Margin="0,0,0,8" />
                     <TextBlock Text="{Binding Artwork}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Rarity}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding RarityName}" Margin="0,0,0,8" />
                     <TextBlock Text="{Binding Cost}" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Range}" Margin="0,0,0,8" />
+                    <TextBlock Text="{Binding RangeName}" Margin="0,0,0,8" />
                 </StackPanel>
             </DataTemplate>
         </ui:GridView.ItemTemplate>

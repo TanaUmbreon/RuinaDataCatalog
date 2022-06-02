@@ -19,12 +19,10 @@ public class SqliteCatalogCardRepository : ICatalogCardRepository
         _dbFile = new FileInfo(dbFilePath);
     }
 
-    public IEnumerable<CardInfo> GetCards()
+    public IEnumerable<LocalizedCardInfo> GetCards()
     {
         using var connection = CreateOpenConnection();
-        var cards = SqliteSelectCardCommand.Execute(connection);
-
-        return cards;
+        return SqliteSelectLocalizedCardCommand.Execute(connection);
     }
 
     /// <summary>

@@ -23,7 +23,7 @@ public class BattlePageListViewModel : BindableBase, IDestructible
     /// <summary>
     /// 表示中のバトル ページ情報のコレクションを取得します。
     /// </summary>
-    public ReactiveCollection<CardInfo> Cards { get; }
+    public ReactiveCollection<LocalizedCardInfo> Cards { get; }
 
     #endregion
 
@@ -49,7 +49,7 @@ public class BattlePageListViewModel : BindableBase, IDestructible
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
 
-        Cards = new ReactiveCollection<CardInfo>()
+        Cards = new ReactiveCollection<LocalizedCardInfo>()
             .AddTo(_disposables);
 
         ClearCardsAsyncCommand = new AsyncReactiveCommand();
