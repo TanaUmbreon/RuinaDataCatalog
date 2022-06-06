@@ -9,7 +9,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="800"
              d:DesignHeight="450">
-    <Grid>
+    <Grid Style="{StaticResource ContentPageGridStyle}">
             
     </Grid>
 </UserControl>
