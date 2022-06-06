@@ -1,16 +1,9 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ModernWpf.Controls;
 using RuinaDataCatalog.Wpf.CommandArgs;
-using RuinaDataCatalog.Wpf.ViewModels;
+using RuinaDataCatalog.Wpf.ViewModels.Windows;
 
-namespace RuinaDataCatalog.Wpf.Views;
+namespace RuinaDataCatalog.Wpf.Views.Windows;
 
 /// <summary>
 /// LanguageWindow.xaml の相互作用ロジック

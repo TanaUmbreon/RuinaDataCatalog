@@ -6,7 +6,7 @@ using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using RuinaDataCatalog.Wpf.CommandArgs;
 
-namespace RuinaDataCatalog.Wpf.ViewModels;
+namespace RuinaDataCatalog.Wpf.ViewModels.Windows;
 
 /// <summary>
 /// メイン ウィンドウをモデル化します。

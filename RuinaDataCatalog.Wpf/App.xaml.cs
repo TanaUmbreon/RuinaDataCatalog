@@ -4,8 +4,10 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using RuinaDataCatalog.Core.Infrastructures;
 using RuinaDataCatalog.Core.Repositories;
-using RuinaDataCatalog.Wpf.ViewModels;
-using RuinaDataCatalog.Wpf.Views;
+using RuinaDataCatalog.Wpf.ViewModels.Controls;
+using RuinaDataCatalog.Wpf.ViewModels.Windows;
+using RuinaDataCatalog.Wpf.Views.ContentPages;
+using RuinaDataCatalog.Wpf.Views.Windows;
 
 namespace RuinaDataCatalog.Wpf;
 

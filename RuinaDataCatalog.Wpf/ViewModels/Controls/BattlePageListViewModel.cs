@@ -6,7 +6,7 @@ using Reactive.Bindings.Extensions;
 using RuinaDataCatalog.Core.Models;
 using RuinaDataCatalog.Core.Repositories;
 
-namespace RuinaDataCatalog.Wpf.ViewModels;
+namespace RuinaDataCatalog.Wpf.ViewModels.Controls;
 
 /// <summary>
 /// バトル ページ情報を表示するリストをモデル化します。
@@ -66,14 +66,16 @@ public class BattlePageListViewModel : BindableBase, IDestructible
 
     private Task ClearCardsAsync()
     {
-        return Task.Run(() => {
+        return Task.Run(() =>
+        {
             Cards.ClearOnScheduler();
         });
     }
 
     private Task ShowCardsAsync()
     {
-        return Task.Run(() => {
+        return Task.Run(() =>
+        {
             Cards.AddRangeOnScheduler(_repository.GetCards());
         });
     }

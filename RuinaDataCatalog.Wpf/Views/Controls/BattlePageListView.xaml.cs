@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
-using RuinaDataCatalog.Wpf.ViewModels;
+using RuinaDataCatalog.Wpf.ViewModels.Controls;
 
-namespace RuinaDataCatalog.Wpf.Views;
+namespace RuinaDataCatalog.Wpf.Views.Controls;
 
 /// <summary>
 /// BattlePageItem.xaml の相互作用ロジック
