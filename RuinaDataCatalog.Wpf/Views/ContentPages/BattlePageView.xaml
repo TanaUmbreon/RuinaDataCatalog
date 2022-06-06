@@ -10,7 +10,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="800"
              d:DesignHeight="450">
-    <Grid Style="{StaticResource PageContentGridStyle}">
+    <Grid Style="{StaticResource ContentPageGridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -18,18 +18,7 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Style="{StaticResource GroupBorderStyle}">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="5,5,5,5">
-                <StackPanel Orientation="Horizontal">
-                    <ToggleButton Content="全て" Margin="0,0,10,0" IsChecked="{Binding IsCheckedAll.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleAllCommand}" />
-                    <ToggleButton Content="あらぬ噂" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter1, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter1Command}" />
-                    <ToggleButton Content="都市怪談" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter2, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter2Command}" />
-                    <ToggleButton Content="都市伝説" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter3, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter3Command}" />
-                    <ToggleButton Content="都市疾病" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter4, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter4Command}" />
-                    <ToggleButton Content="都市悪夢" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter5, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter5Command}" />
-                    <ToggleButton Content="都市の星" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter6, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter6Command}" />
-                    <ToggleButton Content="不純物" Margin="0,0,10,0" IsChecked="{Binding IsCheckedChapter7, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ToggleChapter7Command}" />
-                </StackPanel>
-            </ScrollViewer>
+            <v:ChapterFilteringView />
         </Border>
         <Border Grid.Row="1" Style="{StaticResource GroupBorderStyle}">
             <ui:AutoSuggestBox PlaceholderText="検索" QueryIcon="Find" />

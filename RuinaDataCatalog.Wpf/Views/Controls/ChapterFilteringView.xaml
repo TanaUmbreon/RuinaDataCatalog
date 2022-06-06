@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="RuinaDataCatalog.Wpf.Views.Controls.ChapterFilteringView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="50"
+             d:DesignWidth="640">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="5,5,5,5">
+        <StackPanel Orientation="Horizontal">
+            <ToggleButton Content="全て"
+                          IsChecked="{Binding IsCheckedAll.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleAllCommand}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="あらぬ噂"
+                          IsChecked="{Binding IsCheckedChapter1.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter1Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="都市怪談"
+                          IsChecked="{Binding IsCheckedChapter2.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter2Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="都市伝説"
+                          IsChecked="{Binding IsCheckedChapter3.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter3Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="都市疾病"
+                          IsChecked="{Binding IsCheckedChapter4.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter4Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="都市悪夢"
+                          IsChecked="{Binding IsCheckedChapter5.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter5Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="都市の星"
+                          IsChecked="{Binding IsCheckedChapter6.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter6Command}"
+                          Margin="0,0,5,0" />
+            <ToggleButton Content="不純物"
+                          IsChecked="{Binding IsCheckedChapter7.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          Command="{Binding ToggleChapter7Command}"
+                          Margin="0,0,5,0" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
